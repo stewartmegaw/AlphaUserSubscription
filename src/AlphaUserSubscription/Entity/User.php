@@ -9,7 +9,7 @@
 
 namespace AlphaUserSubscription\Entity;
 
-use AlphaUser\Entity\AlphaUserBase;
+use AlphaUserBase\Entity\AlphaUserBase;
 use AlphaSubscription\Entity\SubscriptionInterface;
 use Doctrine\ORM\Mapping as ORM;
 
