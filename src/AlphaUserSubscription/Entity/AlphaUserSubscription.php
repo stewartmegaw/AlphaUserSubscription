@@ -17,11 +17,11 @@ use Doctrine\ORM\Mapping as ORM;
  * An example of how to implement a role aware user entity.
  *
  * @ORM\Entity
- * @ORM\Table(name="users")
+ * @ORM\Table(name="users_sub")
  *
  * @author Tom Oram <tom@scl.co.uk>
  */
-class User extends User implements SubscriptionInterface {
+class AlphaUserSubscription extends User implements SubscriptionInterface {
 
     public function getSubscribedFiltersIds($addZeroIfEmpty = true) {
         $filters_tmp = array();
