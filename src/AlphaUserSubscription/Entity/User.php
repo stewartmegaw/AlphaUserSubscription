@@ -9,7 +9,7 @@
 
 namespace AlphaUserSubscription\Entity;
 
-use AlphaUser\Entity\User;
+use AlphaUser\Entity\AlphaUserBase;
 use AlphaSubscription\Entity\SubscriptionInterface;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -21,7 +21,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @author Tom Oram <tom@scl.co.uk>
  */
-class AlphaUserSubscription extends User implements SubscriptionInterface {
+class User extends AlphaUserBase implements SubscriptionInterface {
 
     public function getSubscribedFiltersIds($addZeroIfEmpty = true) {
         $filters_tmp = array();
