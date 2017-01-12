@@ -17,7 +17,7 @@ use Doctrine\ORM\Mapping as ORM;
  * An example of how to implement a role aware user entity.
  *
  * @ORM\Entity
- * @ORM\Table(name="users_sub")
+ * @ORM\Table(name="users")
  *
  * @author Tom Oram <tom@scl.co.uk>
  */
