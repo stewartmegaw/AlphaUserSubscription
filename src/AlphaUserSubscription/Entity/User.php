@@ -18,22 +18,8 @@ use AlphaSubscription\Entity\SubscriptionInterface;
  */
 class User extends AlphaUserBase implements SubscriptionInterface {
 
-    /**
-     * @ORM\OneToMany(targetEntity="AlphaPage\Entity\CustomPartialView", mappedBy="user") 
-     */
-    protected $customViews;
-
-    public function getCustomViews() {
-        return $this->customViews;
-    }
-
-    public function setCustomViews($customViews) {
-        $this->customViews = $customViews;
-    }
-
     public function __construct() {
         parent::__construct();
-        $this->customViews = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     public function getSubscribedFiltersIds($addZeroIfEmpty = true) {
