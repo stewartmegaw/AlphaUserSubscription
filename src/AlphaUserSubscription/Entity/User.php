@@ -14,12 +14,7 @@ use AlphaUserBase\Entity\AlphaUserBase;
 use AlphaSubscription\Entity\SubscriptionInterface;
 
 /**
- * An example of how to implement a role aware user entity.
- *
  * @ORM\Entity
- * @ORM\Table(name="users")
- *
- * @author Tom Oram <tom@scl.co.uk>
  */
 class User extends AlphaUserBase implements SubscriptionInterface {
 
