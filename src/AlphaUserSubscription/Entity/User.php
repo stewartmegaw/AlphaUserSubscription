@@ -9,9 +9,9 @@
 
 namespace AlphaUserSubscription\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
 use AlphaUserBase\Entity\AlphaUserBase;
 use AlphaSubscription\Entity\SubscriptionInterface;
-use Doctrine\ORM\Mapping as ORM;
 
 /**
  * An example of how to implement a role aware user entity.
@@ -22,6 +22,24 @@ use Doctrine\ORM\Mapping as ORM;
  * @author Tom Oram <tom@scl.co.uk>
  */
 class User extends AlphaUserBase implements SubscriptionInterface {
+
+    /**
+     * @ORM\OneToMany(targetEntity="AlphaPage\Entity\CustomPartialView", mappedBy="user") 
+     */
+    protected $customViews;
+
+    public function getCustomViews() {
+        return $this->customViews;
+    }
+
+    public function setCustomViews($customViews) {
+        $this->customViews = $customViews;
+    }
+
+    public function __construct() {
+        parent::__construct();
+        $this->customViews = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     public function getSubscribedFiltersIds($addZeroIfEmpty = true) {
         $filters_tmp = array();
